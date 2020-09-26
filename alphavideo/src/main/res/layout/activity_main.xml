@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <LinearLayout
+        android:id="@+id/ly_actons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SurfaceView 原始视频"
+            android:onClick="surface_normal"
+            android:layout_centerInParent="true"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SurfaceView 透明视频"
+            android:onClick="surface_trans"
+            android:layout_centerInParent="true"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_surface"
+            android:text="TextureView 原始视频"
+            android:onClick="texture_normal"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_surface"
+            android:text="TextureView 透明视频"
+            android:onClick="texture_trans"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <com.ywl5320.wlmedia.surface.WlSurfaceView
+        android:id="@+id/wlsurfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+    <com.ywl5320.wlmedia.surface.WlTextureView
+        android:id="@+id/wltextureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffaaff"
+        android:text="上层UI"
+        android:gravity="center"
+        android:layout_below="@+id/ly_actons"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>

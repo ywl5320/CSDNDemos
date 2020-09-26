@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         ivImg3 = findViewById(R.id.iv_img3);
         btnAll = findViewById(R.id.btn_all);
 
+        ivImg3.setRotation(90);
+
 
 
 
@@ -45,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 WlMediaUtil wlMediaUtil = new WlMediaUtil();
-                wlMediaUtil.setSource("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
+                wlMediaUtil.setSource("https://hjapi.51hejia.com/VID20191226144815.mp4");
                 int ret = wlMediaUtil.init();
                 if(ret == 0)
                 {
                     ret = wlMediaUtil.openCodec();
                     if(ret == 0)
                     {
-                        WlVideoImgBean wlVideoImgBean = wlMediaUtil.getVideoImg(false);
+                        WlVideoImgBean wlVideoImgBean = wlMediaUtil.getVideoImg(10, false);
                         if(wlVideoImgBean != null)
                         {
                             Message message = Message.obtain();
@@ -130,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     WlMediaUtil wlMediaUtil = new WlMediaUtil();
-                    wlMediaUtil.setSource("/storage/sdcard0/Movies/GAI周延-大痒痒-哪吒 (《哪吒之魔童降世》电影主题曲)(蓝光).mp4");
+                    wlMediaUtil.setSource("https://hjapi.51hejia.com/VID20191226144815.mp4");
                     int ret = wlMediaUtil.init();
                     if(ret == 0)
                     {
